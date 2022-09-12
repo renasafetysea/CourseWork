@@ -1,21 +1,21 @@
 public class Employee {
-int department;
-int salary;
+private int department;
+private int salary;
 
-String surname;
-String name;
-String patronymic;
+private String surname;
+private String name;
+private String patronymic;
 
-private static int count = 1;
-private  int id = count++;
+private static int counter = 0;
+private Integer id ;
 
-  public void Employee(int department, int salary, String surname,String name,String patronymic) {
+  public Employee(int department, int salary, String surname,String name,String patronymic) {
         this.department = department;
         this.salary = salary;
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
-        count++;
+        this.id = counter++;
 
     }
 
@@ -39,12 +39,8 @@ private  int id = count++;
         return patronymic;
     }
 
-    public static int getCount() {
-        return count;
-    }
-
-    public int getId() {
-        return id;
+    public Integer getId() {
+        return this.id;
     }
 
     public void setDepartment(int department) {
